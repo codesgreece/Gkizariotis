@@ -1273,97 +1273,38 @@ h4 {
 }
 
 /* ========== CONTACT ========== */
-.contact-grid {
-  display: grid;
-  gap: 1.5rem;
+.contact-simple {
+  max-width: 36rem;
 }
 
-.contact-form {
-  display: grid;
-  gap: 0.7rem;
-  background: var(--color-gray-50);
-  padding: 1.1rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--color-gray-100);
+.contact-simple .section-title {
+  max-width: none;
 }
 
-.form-row {
-  display: grid;
-  gap: 1rem;
+.contact-simple-lead {
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+  max-width: 40ch;
 }
 
-.form-field {
-  display: grid;
-  gap: 0.4rem;
+.contact-call-btn {
+  margin-bottom: 1rem;
 }
 
-.form-field label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  font-family: var(--font-display);
-  letter-spacing: 0.04em;
-}
-
-.form-field input,
-.form-field select,
-.form-field textarea {
-  width: 100%;
-  min-height: 42px;
-  padding: 0.55rem 0.8rem;
-  border: 1px solid var(--color-gray-200);
-  border-radius: 7px;
-  background: var(--color-white);
-  transition: border-color var(--transition), box-shadow var(--transition);
-}
-
-.form-field textarea {
-  min-height: 90px;
-  resize: vertical;
-}
-
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus {
-  outline: none;
-  border-color: var(--color-cyan);
-  box-shadow: 0 0 0 3px var(--color-cyan-soft);
-}
-
-.contact-form .btn {
-  width: 100%;
-  margin-top: 0.35rem;
-}
-
-.form-success {
-  padding: 1rem 1.15rem;
-  border-radius: 8px;
-  background: rgba(0, 168, 232, 0.1);
-  color: var(--color-charcoal);
-  border: 1px solid rgba(0, 168, 232, 0.25);
-  font-weight: 600;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.contact-info-brand {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+.contact-call-btn svg {
+  width: 18px;
+  height: 18px;
 }
 
 .contact-info-phone {
+  display: inline-block;
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 2vw, 1.45rem);
   font-weight: 800;
   color: var(--color-cyan);
   letter-spacing: 0.02em;
   transition: opacity var(--transition);
+  margin-bottom: 1.25rem;
 }
 
 .contact-info-phone:hover {
@@ -1371,33 +1312,27 @@ h4 {
 }
 
 .contact-info-areas h3 {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.45rem;
 }
 
 .contact-info-areas p {
   font-weight: 600;
-  line-height: 1.8;
+  line-height: 1.6;
+  font-size: 0.92rem;
 }
 
-@media (min-width: 640px) {
-  .form-row {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 2rem;
-    align-items: start;
-  }
-  .contact-form .btn {
-    width: auto;
-    justify-self: start;
+@media (max-width: 640px) {
+  .contact-call-btn {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    min-height: 48px;
+    padding-block: 0.85rem;
   }
 }
 
