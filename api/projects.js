@@ -1,29 +1,56 @@
-const { json, setCors } = require("../_lib/auth");
-const { readProjects } = require("../_lib/store");
+const { list } = require("@vercel/blob");
+
+const PROJECTS_BLOB_PATH = "data/projects.json";
 
 module.exports = async function handler(req, res) {
-  setCors(res);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+
   if (req.method === "OPTIONS") {
     res.statusCode = 204;
     return res.end();
   }
 
   if (req.method !== "GET") {
-    return json(res, 405, { error: "Method not allowed" });
+    res.statusCode = 405;
+    return res.end(JSON.stringify({ error: "Method not allowed" }));
   }
 
   try {
-    if (!process.env.BLOB_READ_WRITE_TOKEN) {
-      return json(res, 200, []);
+    const token = process.env.BLOB_READ_WRITE_TOKEN;
+    if (!token) {
+      res.statusCode = 200;
+      return res.end("[]");
     }
-    const projects = await readProjects();
+
+    const result = await list({ prefix: PROJECTS_BLOB_PATH, token });
+    const blob =
+      result.blobs.find((item) => item.pathname === PROJECTS_BLOB_PATH) || null;
+
+    if (!blob) {
+      res.statusCode = 200;
+      return res.end("[]");
+    }
+
+    const response = await fetch(blob.url, { cache: "no-store" });
+    if (!response.ok) {
+      res.statusCode = 200;
+      return res.end("[]");
+    }
+
+    const data = await response.json();
+    const projects = Array.isArray(data) ? data : [];
     projects.sort((a, b) => Number(b.createdAt || 0) - Number(a.createdAt || 0));
-    return json(res, 200, projects);
+    res.statusCode = 200;
+    return res.end(JSON.stringify(projects));
   } catch (error) {
     console.error("GET /api/projects failed:", error);
-    return json(res, 500, {
-      error: "Αποτυχία φόρτωσης έργων.",
-      detail: error?.message || String(error),
-    });
+    res.statusCode = 500;
+    return res.end(
+      JSON.stringify({
+        error: "Αποτυχία φόρτωσης έργων.",
+        detail: error?.message || String(error),
+      }),
+    );
   }
 };
