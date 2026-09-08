@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Gizariotis Construction">
+  <rect width="96" height="96" rx="0" fill="#ffffff"/>
+  <path d="M12 80V24L48 6L84 24V80H66V44H30V80H12Z" fill="#1a1d21"/>
+  <path d="M30 80V48H66V80" fill="none" stroke="#00A8E8" stroke-width="4"/>
+  <rect x="42" y="56" width="12" height="24" fill="#00A8E8"/>
+  <path d="M12 24L48 6L84 24" fill="none" stroke="#00A8E8" stroke-width="3"/>
+</svg>
