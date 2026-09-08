@@ -19,25 +19,26 @@ export function Contact() {
       aria-labelledby="contact-title"
     >
       <div className="container">
-        <Reveal className="contact-simple">
+        <Reveal className="contact-panel">
           <span className="section-label">Επικοινωνία</span>
           <h2 id="contact-title" className="section-title">
             Ξεκινήστε το έργο σας σήμερα.
           </h2>
-          <p className="contact-simple-lead">
+          <p className="contact-panel-lead">
             Καλέστε μας για να συζητήσουμε το έργο σας και να λάβετε προσφορά.
           </p>
 
-          <a href="tel:6948033201" className="btn btn-primary contact-call-btn">
-            <PhoneIcon />
-            Καλέστε τώρα για να πάρετε προσφορά
-          </a>
+          <div className="contact-panel-actions">
+            <a href="tel:6948033201" className="btn btn-primary contact-call-btn">
+              <PhoneIcon />
+              Καλέστε τώρα για να πάρετε προσφορά
+            </a>
+            <a href="tel:6948033201" className="contact-panel-phone">
+              694 803 3201
+            </a>
+          </div>
 
-          <a href="tel:6948033201" className="contact-info-phone">
-            694 803 3201
-          </a>
-
-          <div className="contact-info-areas">
+          <div className="contact-panel-areas">
             <h3>Περιοχές</h3>
             <p>Κορινθία • Αττική • Αργολίδα • Αρκαδία • Μαγνησία</p>
           </div>

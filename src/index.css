@@ -1273,56 +1273,88 @@ h4 {
 }
 
 /* ========== CONTACT ========== */
-.contact-simple {
-  max-width: 36rem;
+.contact {
+  background: var(--color-gray-50);
 }
 
-.contact-simple .section-title {
+.contact-panel {
+  max-width: 40rem;
+  margin-inline: auto;
+  text-align: center;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2rem);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-panel .section-label {
+  margin-bottom: 0.55rem;
+}
+
+.contact-panel .section-title {
   max-width: none;
+  margin-inline: auto;
+  margin-bottom: 0.65rem;
 }
 
-.contact-simple-lead {
+.contact-panel-lead {
   color: var(--color-text-muted);
-  margin-bottom: 1.25rem;
-  max-width: 40ch;
+  margin: 0 auto 1.35rem;
+  max-width: 36ch;
+  font-size: 0.95rem;
+}
+
+.contact-panel-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.35rem;
 }
 
 .contact-call-btn {
-  margin-bottom: 1rem;
+  width: auto;
+  max-width: 100%;
 }
 
 .contact-call-btn svg {
   width: 18px;
   height: 18px;
+  flex-shrink: 0;
 }
 
-.contact-info-phone {
-  display: inline-block;
+.contact-panel-phone {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--color-cyan);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   transition: opacity var(--transition);
-  margin-bottom: 1.25rem;
 }
 
-.contact-info-phone:hover {
+.contact-panel-phone:hover {
   opacity: 0.85;
 }
 
-.contact-info-areas h3 {
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: 0.45rem;
+.contact-panel-areas {
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--color-gray-100);
 }
 
-.contact-info-areas p {
+.contact-panel-areas h3 {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.contact-panel-areas p {
   font-weight: 600;
-  line-height: 1.6;
-  font-size: 0.92rem;
+  line-height: 1.55;
+  font-size: 0.9rem;
+  color: var(--color-charcoal);
 }
 
 @media (max-width: 640px) {
