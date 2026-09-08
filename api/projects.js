@@ -1,7 +1,7 @@
-import { json, setCors } from "../_lib/auth.js";
-import { readProjects } from "../_lib/store.js";
+const { json, setCors } = require("../_lib/auth");
+const { readProjects } = require("../_lib/store");
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   setCors(res);
   if (req.method === "OPTIONS") {
     res.statusCode = 204;
@@ -26,4 +26,4 @@ export default async function handler(req, res) {
       detail: error?.message || String(error),
     });
   }
-}
+};

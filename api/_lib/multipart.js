@@ -1,6 +1,6 @@
-import Busboy from "busboy";
+const Busboy = require("busboy");
 
-export function parseMultipart(req) {
+function parseMultipart(req) {
   return new Promise((resolve, reject) => {
     const busboy = Busboy({
       headers: req.headers,
@@ -13,7 +13,9 @@ export function parseMultipart(req) {
     busboy.on("file", (name, file, info) => {
       const chunks = [];
       file.on("data", (chunk) => chunks.push(chunk));
-      file.on("limit", () => reject(new Error("Η φωτογραφία είναι πολύ μεγάλη (max 8MB).")));
+      file.on("limit", () =>
+        reject(new Error("Η φωτογραφία είναι πολύ μεγάλη (max 8MB).")),
+      );
       file.on("end", () => {
         fileData = {
           fieldName: name,
@@ -33,3 +35,5 @@ export function parseMultipart(req) {
     req.pipe(busboy);
   });
 }
+
+module.exports = { parseMultipart };

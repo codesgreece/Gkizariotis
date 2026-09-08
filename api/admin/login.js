@@ -1,6 +1,6 @@
-import { checkPassword, createToken, json, setCors } from "../_lib/auth.js";
+const { checkPassword, createToken, json, setCors } = require("../_lib/auth");
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   setCors(res);
   if (req.method === "OPTIONS") {
     res.statusCode = 204;
@@ -23,4 +23,4 @@ export default async function handler(req, res) {
     console.error(error);
     return json(res, 400, { error: "Μη έγκυρο αίτημα." });
   }
-}
+};

@@ -1,26 +1,20 @@
-import crypto from "node:crypto";
-import path from "node:path";
-import {
+const crypto = require("node:crypto");
+const path = require("node:path");
+const {
   CATEGORIES,
   json,
   requireAuth,
   setCors,
-} from "../_lib/auth.js";
-import { parseMultipart } from "../_lib/multipart.js";
-import {
+} = require("../_lib/auth");
+const { parseMultipart } = require("../_lib/multipart");
+const {
   deleteImageByUrl,
   readProjects,
   uploadImage,
   writeProjects,
-} from "../_lib/store.js";
+} = require("../_lib/store");
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   setCors(res);
   if (req.method === "OPTIONS") {
     res.statusCode = 204;
@@ -110,4 +104,10 @@ export default async function handler(req, res) {
   }
 
   return json(res, 405, { error: "Method not allowed" });
-}
+};
+
+module.exports.config = {
+  api: {
+    bodyParser: false,
+  },
+};

@@ -1,5 +1,5 @@
-import { list, put, del } from "@vercel/blob";
-import { PROJECTS_BLOB_PATH } from "./auth.js";
+const { list, put, del } = require("@vercel/blob");
+const { PROJECTS_BLOB_PATH } = require("./auth");
 
 function blobToken() {
   const token = process.env.BLOB_READ_WRITE_TOKEN;
@@ -17,7 +17,7 @@ async function findProjectsBlob() {
   return result.blobs.find((blob) => blob.pathname === PROJECTS_BLOB_PATH) || null;
 }
 
-export async function readProjects() {
+async function readProjects() {
   const blob = await findProjectsBlob();
   if (!blob) return [];
   const res = await fetch(blob.url, { cache: "no-store" });
@@ -26,7 +26,7 @@ export async function readProjects() {
   return Array.isArray(data) ? data : [];
 }
 
-export async function writeProjects(projects) {
+async function writeProjects(projects) {
   await put(PROJECTS_BLOB_PATH, JSON.stringify(projects, null, 2), {
     access: "public",
     addRandomSuffix: false,
@@ -36,7 +36,7 @@ export async function writeProjects(projects) {
   });
 }
 
-export async function uploadImage(filename, buffer, contentType) {
+async function uploadImage(filename, buffer, contentType) {
   const blob = await put(`uploads/${filename}`, buffer, {
     access: "public",
     contentType: contentType || "image/jpeg",
@@ -45,7 +45,7 @@ export async function uploadImage(filename, buffer, contentType) {
   return blob.url;
 }
 
-export async function deleteImageByUrl(url) {
+async function deleteImageByUrl(url) {
   if (!url) return;
   try {
     await del(url, { token: blobToken() });
@@ -53,3 +53,10 @@ export async function deleteImageByUrl(url) {
     // ignore missing blob
   }
 }
+
+module.exports = {
+  readProjects,
+  writeProjects,
+  uploadImage,
+  deleteImageByUrl,
+};
