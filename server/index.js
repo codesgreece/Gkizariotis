@@ -170,6 +170,32 @@ app.post("/api/admin/projects", requireAuth, (req, res) => {
   });
 });
 
+app.delete("/api/admin/projects", requireAuth, (req, res) => {
+  const id = String(req.query.id || "");
+  if (!id) {
+    return res.status(400).json({ error: "Λείπει το id." });
+  }
+
+  const projects = readProjects();
+  const index = projects.findIndex((p) => p.id === id);
+  if (index === -1) {
+    return res.status(404).json({ error: "Δεν βρέθηκε." });
+  }
+
+  const [removed] = projects.splice(index, 1);
+  writeProjects(projects);
+
+  if (removed?.image) {
+    const filename = path.basename(removed.image);
+    const filePath = path.join(uploadsDir, filename);
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+    }
+  }
+
+  return res.json({ ok: true });
+});
+
 app.delete("/api/admin/projects/:id", requireAuth, (req, res) => {
   const projects = readProjects();
   const index = projects.findIndex((p) => p.id === req.params.id);

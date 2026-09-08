@@ -64,7 +64,7 @@ export async function createProject(formData: FormData) {
 }
 
 export async function deleteProject(id: string) {
-  const res = await fetch(`/api/admin/projects/${id}`, {
+  const res = await fetch(`/api/admin/projects?id=${encodeURIComponent(id)}`, {
     method: "DELETE",
     headers: { Authorization: `Bearer ${getAdminToken()}` },
   });
