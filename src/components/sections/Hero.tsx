@@ -12,6 +12,10 @@ function CheckIcon() {
   );
 }
 
+function scrollToId(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 export function Hero() {
   return (
     <section id="home" className="hero" aria-label="Αρχική">
@@ -39,10 +43,24 @@ export function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a href="#contact" className="btn btn-primary">
+          <a
+            href="#contact"
+            className="btn btn-primary"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToId("contact");
+            }}
+          >
             Ζητήστε Προσφορά
           </a>
-          <a href="#services" className="btn btn-secondary">
+          <a
+            href="#services"
+            className="btn btn-secondary"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToId("services");
+            }}
+          >
             Δείτε τις Υπηρεσίες
           </a>
         </div>

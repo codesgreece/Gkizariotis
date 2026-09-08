@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 
 const NAV_LINKS = [
   { href: "#home", label: "Αρχική" },
@@ -20,6 +20,31 @@ function PhoneIcon() {
   );
 }
 
+function BrandLogo() {
+  return (
+    <>
+      <img
+        src="/logo-mark.svg"
+        alt=""
+        className="logo-mark"
+        width={44}
+        height={44}
+      />
+      <span className="logo-text">
+        <span className="logo-name">GIZARIOTIS</span>
+        <span className="logo-tag">CONSTRUCTION</span>
+      </span>
+    </>
+  );
+}
+
+function scrollToHash(hash: string) {
+  const id = hash.replace("#", "");
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -38,6 +63,13 @@ export function Header() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  const onNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault();
+    closeMenu();
+    scrollToHash(href);
+    history.replaceState(null, "", href);
+  };
+
   return (
     <header
       className={`site-header is-transparent${scrolled ? " is-scrolled" : ""}${
@@ -45,26 +77,34 @@ export function Header() {
       }`}
     >
       <div className="header-inner">
-        <a href="#home" className="logo" onClick={closeMenu}>
-          <img
-            src="/logo.svg"
-            alt="Gizariotis Construction"
-            className="logo-img"
-            width={200}
-            height={54}
-          />
+        <a
+          href="#home"
+          className="logo"
+          aria-label="Gizariotis Construction"
+          onClick={(e) => onNavClick(e, "#home")}
+        >
+          <BrandLogo />
         </a>
 
         <nav className="nav-desktop" aria-label="Κύρια πλοήγηση">
           {NAV_LINKS.map((link) => (
-            <a key={link.href} href={link.href} className="nav-link">
+            <a
+              key={link.href}
+              href={link.href}
+              className="nav-link"
+              onClick={(e) => onNavClick(e, link.href)}
+            >
               {link.label}
             </a>
           ))}
         </nav>
 
         <div className="header-actions">
-          <a href="#contact" className="btn btn-primary header-cta">
+          <a
+            href="#contact"
+            className="btn btn-primary header-cta"
+            onClick={(e) => onNavClick(e, "#contact")}
+          >
             Ζητήστε Προσφορά
           </a>
           <a
@@ -97,12 +137,16 @@ export function Header() {
             key={link.href}
             href={link.href}
             className="nav-link"
-            onClick={closeMenu}
+            onClick={(e) => onNavClick(e, link.href)}
           >
             {link.label}
           </a>
         ))}
-        <a href="#contact" className="btn btn-primary" onClick={closeMenu}>
+        <a
+          href="#contact"
+          className="btn btn-primary"
+          onClick={(e) => onNavClick(e, "#contact")}
+        >
           Ζητήστε Προσφορά
         </a>
         <a href="tel:6948033201" className="btn btn-outline" onClick={closeMenu}>

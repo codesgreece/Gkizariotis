@@ -95,7 +95,7 @@ export function Projects() {
           </div>
         </div>
 
-        <div className="projects-gallery">
+        <div className={`projects-gallery${visible.length >= 5 ? " has-many" : ""}`}>
           {visible.map((project, index) => (
             <Reveal
               key={`${project.title}-${project.category}`}

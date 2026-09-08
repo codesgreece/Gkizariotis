@@ -13,25 +13,19 @@ export function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="#home" className="logo">
+            <a href="#home" className="logo footer-logo">
               <img
-                src="/logo.svg"
-                alt="Gizariotis Construction"
-                className="logo-img"
-                width={200}
-                height={54}
+                src="/logo-mark-light.svg"
+                alt=""
+                className="logo-mark"
+                width={44}
+                height={44}
               />
+              <span className="logo-text">
+                <span className="logo-name">GIZARIOTIS</span>
+                <span className="logo-tag">CONSTRUCTION</span>
+              </span>
             </a>
-            <strong
-              style={{
-                display: "block",
-                color: "#fff",
-                fontFamily: "var(--font-display)",
-                letterSpacing: "0.04em",
-              }}
-            >
-              GIZARIOTIS CONSTRUCTION
-            </strong>
             <p>Ανακαινίσεις &amp; κατασκευές με ολοκληρωμένες λύσεις.</p>
           </div>
 

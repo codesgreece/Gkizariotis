@@ -1,14 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" role="img" aria-label="Gizariotis Construction">
-  <rect width="520" height="140" fill="#ffffff"/>
-  <!-- Architectural mark: building frame + cyan accent -->
-  <g transform="translate(18, 22)">
-    <path d="M8 88V28L48 8L88 28V88H68V48H28V88H8Z" fill="#1a1d21"/>
-    <path d="M28 88V52H68V88" fill="none" stroke="#00A8E8" stroke-width="4"/>
-    <rect x="40" y="60" width="16" height="28" fill="#00A8E8"/>
-    <path d="M8 28L48 8L88 28" fill="none" stroke="#00A8E8" stroke-width="3"/>
-  </g>
-  <g fill="#1a1d21" font-family="Arial Black, Helvetica, Arial, sans-serif">
-    <text x="118" y="62" font-size="36" font-weight="900" letter-spacing="1.5">GIZARIOTIS</text>
-    <text x="118" y="98" font-size="22" font-weight="700" letter-spacing="6" fill="#00A8E8">CONSTRUCTION</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" fill="none" role="img" aria-label="Gizariotis Construction">
+  <!-- Architectural mark -->
+  <path d="M8 84V22L44 4L80 22V84H64V48H24V84H8Z" fill="#1A1D21"/>
+  <path d="M24 84V52H64V84" stroke="#00A8E8" stroke-width="4"/>
+  <rect x="38" y="58" width="12" height="26" fill="#00A8E8"/>
+  <path d="M8 22L44 4L80 22" stroke="#00A8E8" stroke-width="3"/>
+  <!-- Wordmark as paths for reliable rendering -->
+  <g fill="#1A1D21">
+    <!-- GIZARIOTIS as simple geometric wordmark using textPath-free approach:
+         Use foreignObject-safe fallback via HTML instead; keep mark-only SVG for img use -->
   </g>
 </svg>
