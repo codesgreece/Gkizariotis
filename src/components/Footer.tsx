@@ -40,8 +40,13 @@ export function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>Ανακαινίσεις &amp; κατασκευές με ολοκληρωμένες λύσεις.</p>
           <p>© 2026 GIZARIOTIS CONSTRUCTION. All rights reserved.</p>
+          <p className="footer-credit">
+            Σχεδιασμός &amp; ανάπτυξη από{" "}
+            <span className="footer-credit-name">Χαράλαμπο Χριστόπουλο</span>
+            {" · "}
+            <a href="tel:6936732844">693 673 2844</a>
+          </p>
         </div>
       </div>
     </footer>
