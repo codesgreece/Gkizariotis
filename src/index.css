@@ -18,9 +18,9 @@
   --font-display: "Archivo", system-ui, sans-serif;
   --font-body: "Manrope", system-ui, sans-serif;
 
-  --container: min(1100px, calc(100% - 2.5rem));
-  --container-wide: min(1200px, calc(100% - 2.5rem));
-  --header-h: 68px;
+  --container: min(1040px, calc(100% - 2rem));
+  --container-wide: min(1120px, calc(100% - 2rem));
+  --header-h: 64px;
   --radius: 10px;
   --radius-lg: 16px;
   --shadow-sm: 0 4px 18px rgba(15, 17, 20, 0.06);
@@ -49,8 +49,8 @@ section[id] {
 
 body {
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: var(--color-text);
   background: var(--color-white);
   -webkit-font-smoothing: antialiased;
@@ -109,30 +109,30 @@ h4 {
 }
 
 .section {
-  padding: clamp(2.75rem, 4.5vw, 4.25rem) 0;
+  padding: clamp(1.75rem, 3vw, 2.75rem) 0;
 }
 
 .section-label {
   display: inline-block;
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-cyan);
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.45rem;
 }
 
 .section-title {
-  font-size: clamp(1.65rem, 2.8vw, 2.35rem);
-  margin-bottom: 0.75rem;
-  max-width: 20ch;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  margin-bottom: 0.5rem;
+  max-width: 22ch;
 }
 
 .section-subtitle {
-  font-size: clamp(0.98rem, 1.3vw, 1.08rem);
+  font-size: clamp(0.9rem, 1.2vw, 0.98rem);
   color: var(--color-text-muted);
-  max-width: 44ch;
+  max-width: 46ch;
 }
 
 /* Buttons */
@@ -140,14 +140,14 @@ h4 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  min-height: 46px;
-  padding: 0.7rem 1.35rem;
-  border-radius: 8px;
+  gap: 0.45rem;
+  min-height: 42px;
+  padding: 0.6rem 1.15rem;
+  border-radius: 7px;
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   transition: transform var(--transition), background var(--transition),
     color var(--transition), border-color var(--transition),
@@ -469,7 +469,7 @@ h4 {
 /* ========== HERO ========== */
 .hero {
   position: relative;
-  min-height: min(88svh, 720px);
+  min-height: min(68svh, 560px);
   display: flex;
   align-items: flex-end;
   color: var(--color-white);
@@ -503,38 +503,38 @@ h4 {
   z-index: 2;
   width: var(--container-wide);
   margin-inline: auto;
-  padding: calc(var(--header-h) + 2rem) 0 3.5rem;
+  padding: calc(var(--header-h) + 1.25rem) 0 2.25rem;
 }
 
 .hero-brand {
   font-family: var(--font-display);
-  font-size: clamp(0.72rem, 1.2vw, 0.8rem);
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-cyan);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.55rem;
 }
 
 .hero h1 {
-  font-size: clamp(1.9rem, 4.2vw, 3.15rem);
+  font-size: clamp(1.65rem, 3.4vw, 2.55rem);
   font-weight: 800;
-  max-width: 15ch;
-  margin-bottom: 0.9rem;
+  max-width: 16ch;
+  margin-bottom: 0.65rem;
 }
 
 .hero-lead {
-  font-size: clamp(0.98rem, 1.4vw, 1.1rem);
-  max-width: 42ch;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  max-width: 44ch;
   color: rgba(255, 255, 255, 0.86);
-  margin-bottom: 1.35rem;
+  margin-bottom: 1rem;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1.35rem;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
 }
 
 .hero-perks {
@@ -546,8 +546,8 @@ h4 {
 .hero-perk {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
+  gap: 0.4rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.92);
 }
@@ -612,28 +612,29 @@ h4 {
 /* ========== INTRO ========== */
 .intro-grid {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
 .intro-copy p {
   color: var(--color-text-muted);
-  margin-bottom: 0.9rem;
-  max-width: 50ch;
+  margin-bottom: 0.65rem;
+  max-width: 52ch;
+  font-size: 0.92rem;
 }
 
 .intro-stat {
-  margin-top: 1.5rem;
-  padding-top: 1.25rem;
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
   border-top: 1px solid var(--color-gray-100);
   display: flex;
   align-items: baseline;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .intro-stat-number {
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 5.5vw, 4rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 0.9;
   color: var(--color-cyan);
@@ -642,9 +643,9 @@ h4 {
 
 .intro-stat-label {
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-charcoal);
   max-width: 10ch;
@@ -652,10 +653,10 @@ h4 {
 
 .intro-media {
   position: relative;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   overflow: hidden;
-  aspect-ratio: 5 / 4;
-  max-height: 420px;
+  aspect-ratio: 16 / 11;
+  max-height: 320px;
   box-shadow: var(--shadow-md);
 }
 
@@ -684,7 +685,7 @@ h4 {
 @media (min-width: 900px) {
   .intro-grid {
     grid-template-columns: 1.05fr 0.95fr;
-    gap: 3rem;
+    gap: 2.25rem;
   }
 }
 
@@ -694,19 +695,19 @@ h4 {
 }
 
 .services-head {
-  margin-bottom: 2rem;
+  margin-bottom: 1.35rem;
 }
 
 .services-grid {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.7rem;
 }
 
 .service-card {
   background: var(--color-white);
   border: 1px solid rgba(15, 17, 20, 0.05);
   border-radius: var(--radius);
-  padding: 1.25rem 1.15rem;
+  padding: 1rem 0.95rem;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition),
     border-color var(--transition);
@@ -738,31 +739,31 @@ h4 {
 }
 
 .service-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 9px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
   background: var(--color-cyan-soft);
   color: var(--color-cyan);
   display: grid;
   place-items: center;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.7rem;
 }
 
 .service-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .service-card h3 {
-  font-size: 0.95rem;
+  font-size: 0.86rem;
   letter-spacing: 0.02em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   text-transform: uppercase;
 }
 
 .service-card p {
   color: var(--color-text-muted);
-  font-size: 0.92rem;
+  font-size: 0.86rem;
 }
 
 @media (min-width: 640px) {
@@ -791,26 +792,27 @@ h4 {
 }
 
 .key-in-hand-copy {
-  max-width: 50ch;
+  max-width: 52ch;
   color: rgba(255, 255, 255, 0.78);
-  margin-bottom: 2rem;
+  margin-bottom: 1.35rem;
+  font-size: 0.92rem;
 }
 
 .key-in-hand-copy p + p {
-  margin-top: 0.75rem;
+  margin-top: 0.55rem;
 }
 
 .process-visual {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.55rem;
 }
 
 .process-step {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.85rem;
+  gap: 0.7rem;
   align-items: center;
-  padding: 0.95rem 1.05rem;
+  padding: 0.75rem 0.85rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.03);
@@ -824,7 +826,7 @@ h4 {
 
 .process-num {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--color-cyan);
   letter-spacing: -0.02em;
@@ -832,19 +834,19 @@ h4 {
 
 .process-step span:last-child {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.86rem;
 }
 
 @media (min-width: 768px) {
   .process-visual {
     grid-template-columns: repeat(5, 1fr);
-    gap: 0.7rem;
+    gap: 0.55rem;
   }
   .process-step {
     grid-template-columns: 1fr;
-    min-height: 120px;
+    min-height: 95px;
     align-content: start;
-    gap: 0.65rem;
+    gap: 0.5rem;
   }
 }
 
@@ -852,8 +854,8 @@ h4 {
 .projects-head {
   display: flex;
   flex-direction: column;
-  gap: 1.15rem;
-  margin-bottom: 1.75rem;
+  gap: 0.9rem;
+  margin-bottom: 1.15rem;
 }
 
 .project-filters {
@@ -863,10 +865,10 @@ h4 {
 }
 
 .filter-btn {
-  padding: 0.55rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 999px;
   border: 1px solid var(--color-gray-200);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--color-text-muted);
   transition: all var(--transition);
@@ -885,20 +887,20 @@ h4 {
 
 .projects-gallery {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.7rem;
 }
 
 .project-card {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 11;
   background: var(--color-charcoal);
   cursor: default;
 }
 
 .project-card.featured {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
 }
 
 .project-card img {
@@ -920,7 +922,7 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.15rem;
+  padding: 0.9rem;
   transition: background var(--transition);
 }
 
@@ -949,13 +951,13 @@ h4 {
 
 .project-card h3 {
   color: var(--color-white);
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .project-card p {
   color: rgba(255, 255, 255, 0.78);
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   max-width: 36ch;
 }
 
@@ -980,15 +982,15 @@ h4 {
   }
   .project-card {
     aspect-ratio: auto;
-    min-height: 220px;
+    min-height: 180px;
   }
   .projects-gallery.has-many .project-card:nth-child(1) {
     grid-column: span 7;
-    min-height: 300px;
+    min-height: 240px;
   }
   .projects-gallery.has-many .project-card:nth-child(2) {
     grid-column: span 5;
-    min-height: 300px;
+    min-height: 240px;
   }
   .projects-gallery.has-many .project-card:nth-child(3),
   .projects-gallery.has-many .project-card:nth-child(4),
@@ -997,7 +999,7 @@ h4 {
   }
   .projects-gallery.has-many .project-card:nth-child(6) {
     grid-column: span 12;
-    min-height: 240px;
+    min-height: 190px;
   }
 }
 
@@ -1009,52 +1011,52 @@ h4 {
 .why-grid {
   display: grid;
   gap: 0;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   border-top: 1px solid var(--color-gray-200);
 }
 
 .why-item {
   display: grid;
-  gap: 0.55rem;
-  padding: 1.35rem 0;
+  gap: 0.35rem;
+  padding: 0.95rem 0;
   border-bottom: 1px solid var(--color-gray-200);
 }
 
 .why-num {
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--color-cyan);
 }
 
 .why-item h3 {
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
 
 .why-item p {
   color: var(--color-text-muted);
-  max-width: 52ch;
-  font-size: 0.95rem;
+  max-width: 54ch;
+  font-size: 0.88rem;
 }
 
 @media (min-width: 768px) {
   .why-item {
-    grid-template-columns: 70px 1fr 1.3fr;
+    grid-template-columns: 60px 1fr 1.4fr;
     align-items: baseline;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
+    gap: 1.15rem;
+    padding: 1rem 0;
   }
 }
 
 /* ========== PROCESS TIMELINE ========== */
 .timeline {
-  margin-top: 2rem;
+  margin-top: 1.35rem;
   position: relative;
   display: grid;
-  gap: 1.15rem;
+  gap: 0.9rem;
 }
 
 .timeline-line {
@@ -1069,8 +1071,8 @@ h4 {
 }
 
 .timeline-dot {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--color-white);
   border: 2px solid var(--color-cyan);
@@ -1079,7 +1081,7 @@ h4 {
   place-items: center;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   position: relative;
   z-index: 1;
   transition: background var(--transition), color var(--transition);
@@ -1092,25 +1094,25 @@ h4 {
 }
 
 .timeline-content h3 {
-  font-size: 1.02rem;
-  margin-bottom: 0.25rem;
+  font-size: 0.92rem;
+  margin-bottom: 0.2rem;
 }
 
 .timeline-content p {
   color: var(--color-text-muted);
-  font-size: 0.92rem;
+  font-size: 0.84rem;
 }
 
 @media (min-width: 900px) {
   .timeline {
     grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-    padding-top: 1rem;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
   }
   .timeline-line {
     display: block;
     position: absolute;
-    top: 40px;
+    top: 32px;
     left: 5%;
     right: 5%;
     height: 2px;
@@ -1160,18 +1162,19 @@ h4 {
 
 .areas-lead {
   color: rgba(255, 255, 255, 0.75);
-  max-width: 50ch;
-  margin-bottom: 1.75rem;
+  max-width: 52ch;
+  margin-bottom: 1.15rem;
+  font-size: 0.92rem;
 }
 
 .areas-grid {
   display: grid;
-  gap: 0.7rem;
+  gap: 0.55rem;
   position: relative;
 }
 
 .area-card {
-  padding: 1.15rem 1.1rem;
+  padding: 0.9rem 0.95rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.03);
@@ -1186,13 +1189,13 @@ h4 {
 }
 
 .area-card h3 {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   letter-spacing: 0.08em;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .area-card span {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: var(--color-cyan);
   font-weight: 600;
 }
@@ -1212,7 +1215,7 @@ h4 {
 /* ========== CTA BANNER ========== */
 .cta-banner {
   position: relative;
-  padding: clamp(3rem, 5.5vw, 4.5rem) 0;
+  padding: clamp(2rem, 4vw, 3rem) 0;
   background:
     linear-gradient(120deg, rgba(15, 17, 20, 0.88), rgba(15, 17, 20, 0.72)),
     url("/images/project-6.jpg") center / cover no-repeat;
@@ -1221,16 +1224,16 @@ h4 {
 }
 
 .cta-banner h2 {
-  font-size: clamp(1.65rem, 3.2vw, 2.45rem);
-  max-width: 18ch;
+  font-size: clamp(1.4rem, 2.6vw, 1.95rem);
+  max-width: 20ch;
   margin-inline: auto;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .cta-banner p {
   color: rgba(255, 255, 255, 0.82);
-  margin-bottom: 1.5rem;
-  font-size: 1.05rem;
+  margin-bottom: 1.1rem;
+  font-size: 0.95rem;
 }
 
 .cta-banner-actions {
@@ -1243,9 +1246,9 @@ h4 {
 .cta-phone {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.45rem;
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--color-white);
@@ -1272,15 +1275,15 @@ h4 {
 /* ========== CONTACT ========== */
 .contact-grid {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .contact-form {
   display: grid;
-  gap: 0.85rem;
+  gap: 0.7rem;
   background: var(--color-gray-50);
-  padding: 1.35rem;
-  border-radius: var(--radius-lg);
+  padding: 1.1rem;
+  border-radius: var(--radius);
   border: 1px solid var(--color-gray-100);
 }
 
@@ -1305,16 +1308,16 @@ h4 {
 .form-field select,
 .form-field textarea {
   width: 100%;
-  min-height: 46px;
-  padding: 0.65rem 0.9rem;
+  min-height: 42px;
+  padding: 0.55rem 0.8rem;
   border: 1px solid var(--color-gray-200);
-  border-radius: 8px;
+  border-radius: 7px;
   background: var(--color-white);
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .form-field textarea {
-  min-height: 110px;
+  min-height: 90px;
   resize: vertical;
 }
 
@@ -1343,20 +1346,20 @@ h4 {
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
   justify-content: center;
 }
 
 .contact-info-brand {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 800;
   letter-spacing: 0.04em;
 }
 
 .contact-info-phone {
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
   font-weight: 800;
   color: var(--color-cyan);
   letter-spacing: 0.02em;
@@ -1389,7 +1392,7 @@ h4 {
 @media (min-width: 900px) {
   .contact-grid {
     grid-template-columns: 1.2fr 0.8fr;
-    gap: 2.75rem;
+    gap: 2rem;
     align-items: start;
   }
   .contact-form .btn {
@@ -1402,13 +1405,13 @@ h4 {
 .site-footer {
   background: var(--color-charcoal-deep);
   color: rgba(255, 255, 255, 0.78);
-  padding: 2.5rem 0 1.5rem;
+  padding: 1.75rem 0 1.15rem;
 }
 
 .footer-grid {
   display: grid;
-  gap: 1.75rem;
-  margin-bottom: 1.75rem;
+  gap: 1.35rem;
+  margin-bottom: 1.25rem;
 }
 
 .footer-brand .logo {
