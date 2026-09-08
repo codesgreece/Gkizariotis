@@ -20,7 +20,10 @@ export default async function handler(req, res) {
     projects.sort((a, b) => Number(b.createdAt || 0) - Number(a.createdAt || 0));
     return json(res, 200, projects);
   } catch (error) {
-    console.error(error);
-    return json(res, 500, { error: "Αποτυχία φόρτωσης έργων." });
+    console.error("GET /api/projects failed:", error);
+    return json(res, 500, {
+      error: "Αποτυχία φόρτωσης έργων.",
+      detail: error?.message || String(error),
+    });
   }
 }
