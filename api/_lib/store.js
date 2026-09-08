@@ -33,6 +33,7 @@ async function writeProjects(projects) {
     allowOverwrite: true,
     contentType: "application/json",
     token: blobToken(),
+    cacheControlMaxAge: 0,
   });
 }
 

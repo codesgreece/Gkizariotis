@@ -32,7 +32,7 @@ module.exports = async function handler(req, res) {
       return res.end("[]");
     }
 
-    const response = await fetch(blob.url, { cache: "no-store" });
+    const response = await fetch(`${blob.url}?t=${Date.now()}`, { cache: "no-store" });
     if (!response.ok) {
       res.statusCode = 200;
       return res.end("[]");
