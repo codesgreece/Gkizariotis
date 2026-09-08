@@ -1,33 +1,48 @@
 # Gizariotis Construction
 
-Premium marketing website for **GIZARIOTIS CONSTRUCTION** — ανακαινίσεις, κατασκευές και τεχνικά έργα.
+Premium marketing website for **GIZARIOTIS CONSTRUCTION**.
 
-## Stack
-
-- Vite + React + TypeScript
-- Semantic HTML, mobile-first CSS
-- LocalBusiness structured data
-
-## Development
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Production build
+- Site: http://localhost:5173
+- Admin: http://localhost:5173/admin
+
+## Production
 
 ```bash
 npm run build
-npm run preview
+npm start
 ```
 
-## Brand assets
+Server listens on port `3001` (or `PORT`).
 
-- Logo: `public/logo.svg` (replace with the official logo file when available)
-- Mark: `public/logo-mark.svg`
-- Placeholder project images: `public/images/` (replace with real project photos)
+## Mini admin (photos)
+
+Path: `/admin`
+
+Default password: `gizariotis2026`
+
+Change it with environment variables:
+
+```bash
+ADMIN_PASSWORD=your-strong-password
+ADMIN_TOKEN_SECRET=random-long-secret
+PORT=3001
+```
+
+The client can:
+1. Open `/admin`
+2. Log in
+3. Upload project photos with title / category / description
+4. Delete photos
+
+Uploaded files are stored in `public/uploads/` and metadata in `data/projects.json`.
 
 ## Contact
 
-Phone: [694 803 3201](tel:6948033201)
+Business phone: [694 803 3201](tel:6948033201)

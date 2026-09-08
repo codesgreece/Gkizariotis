@@ -1,58 +1,44 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Reveal } from "../../hooks/useReveal";
+import {
+  PROJECT_CATEGORIES,
+  fetchProjects,
+  type Project,
+  type ProjectCategory,
+} from "../../lib/projectsApi";
 
-type Category = "Όλα" | "Κατοικίες" | "Διαμερίσματα" | "Επαγγελματικοί χώροι" | "Ανακαινίσεις";
+type Filter = "Όλα" | ProjectCategory;
 
-const FILTERS: Category[] = [
-  "Όλα",
-  "Κατοικίες",
-  "Διαμερίσματα",
-  "Επαγγελματικοί χώροι",
-  "Ανακαινίσεις",
-];
-
-const PROJECTS = [
-  {
-    title: "Σύγχρονη κατοικία",
-    category: "Κατοικίες" as Category,
-    description: "Πλήρης αναβάθμιση εσωτερικών χώρων με σύγχρονη αισθητική.",
-  },
-  {
-    title: "Ανακαίνιση διαμερίσματος",
-    category: "Διαμερίσματα" as Category,
-    description: "Οργανωμένη ανακαίνιση με έμφαση στη λειτουργικότητα.",
-  },
-  {
-    title: "Premium interior",
-    category: "Ανακαινίσεις" as Category,
-    description: "Λεπτομερής ανακαίνιση με υψηλής ποιότητας τελειώματα.",
-  },
-  {
-    title: "Επαγγελματικός χώρος",
-    category: "Επαγγελματικοί χώροι" as Category,
-    description: "Σύγχρονος και λειτουργικός χώρος εργασίας.",
-  },
-  {
-    title: "Ολοκληρωμένη ανακαίνιση",
-    category: "Ανακαινίσεις" as Category,
-    description: "Από τον σχεδιασμό έως την παράδοση με το κλειδί στο χέρι.",
-  },
-  {
-    title: "Αναβάθμιση κατοικίας",
-    category: "Κατοικίες" as Category,
-    description: "Μετατροπή υπάρχοντος χώρου σε σύγχρονη κατοικία.",
-  },
-];
+const FILTERS: Filter[] = ["Όλα", ...PROJECT_CATEGORIES];
 
 export function Projects() {
-  const [active, setActive] = useState<Category>("Όλα");
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [active, setActive] = useState<Filter>("Όλα");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let alive = true;
+    fetchProjects()
+      .then((data) => {
+        if (alive) setProjects(data);
+      })
+      .catch(() => {
+        if (alive) setProjects([]);
+      })
+      .finally(() => {
+        if (alive) setLoading(false);
+      });
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   const visible = useMemo(
     () =>
       active === "Όλα"
-        ? PROJECTS
-        : PROJECTS.filter((p) => p.category === active),
-    [active],
+        ? projects
+        : projects.filter((project) => project.category === active),
+    [active, projects],
   );
 
   return (
@@ -73,36 +59,59 @@ export function Projects() {
             </p>
           </Reveal>
 
-          <div className="project-filters" role="tablist" aria-label="Κατηγορίες έργων">
-            {FILTERS.map((filter) => (
-              <button
-                key={filter}
-                type="button"
-                role="tab"
-                aria-selected={active === filter}
-                className={`filter-btn${active === filter ? " is-active" : ""}`}
-                onClick={() => setActive(filter)}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
+          {projects.length > 0 ? (
+            <div
+              className="project-filters"
+              role="tablist"
+              aria-label="Κατηγορίες έργων"
+            >
+              {FILTERS.map((filter) => (
+                <button
+                  key={filter}
+                  type="button"
+                  role="tab"
+                  aria-selected={active === filter}
+                  className={`filter-btn${active === filter ? " is-active" : ""}`}
+                  onClick={() => setActive(filter)}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
+          ) : null}
         </div>
 
-        <div className="projects-list">
-          {visible.map((project, index) => (
-            <Reveal
-              key={`${project.title}-${project.category}`}
-              as="article"
-              className="project-item"
-              delay={((index % 4) + 1) as 1 | 2 | 3 | 4}
-            >
-              <span className="project-category">{project.category}</span>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-            </Reveal>
-          ))}
-        </div>
+        {loading ? (
+          <p className="projects-empty">Φόρτωση έργων...</p>
+        ) : visible.length === 0 ? (
+          <div className="projects-empty-panel">
+            <p className="projects-empty">
+              Σύντομα θα προστεθούν φωτογραφίες από τα έργα μας.
+            </p>
+          </div>
+        ) : (
+          <div className="projects-gallery">
+            {visible.map((project, index) => (
+              <Reveal
+                key={project.id}
+                as="article"
+                className="project-card"
+                delay={((index % 4) + 1) as 1 | 2 | 3 | 4}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                />
+                <div className="project-card-overlay">
+                  <span className="project-category">{project.category}</span>
+                  <h3>{project.title}</h3>
+                  {project.description ? <p>{project.description}</p> : null}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
