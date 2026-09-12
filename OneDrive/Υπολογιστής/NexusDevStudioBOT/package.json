@@ -1,0 +1,50 @@
+{
+  "name": "nexus-dev-studio-bot",
+  "version": "1.0.0",
+  "description": "Professional management Discord bot + web dashboard for NEXUS | DEVELOPMENT",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "concurrently -n bot,web -c magenta,cyan \"npm:dev:bot\" \"npm:dev:web\"",
+    "dev:bot": "tsx watch src/index.ts",
+    "dev:web": "npm run dev --prefix dashboard",
+    "build": "npm run build:bot && npm run build:web",
+    "build:bot": "tsc",
+    "build:web": "npm run build --prefix dashboard",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "register": "tsx src/register-commands.ts"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "nexus",
+    "discord.js",
+    "dashboard"
+  ],
+  "author": "Nexus Development",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.1",
+    "@types/node": "^22.10.2",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
