@@ -50,7 +50,14 @@ export function Footer() {
             </p>
             <p className="footer-made-by">
               <span>Φτιάχτηκε από</span>
-              <span className="footer-made-by-pill">NexusDevStudio Greece</span>
+              <a
+                href="https://www.nexusdevstudio.gr/"
+                className="footer-made-by-pill"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NexusDevStudio Greece
+              </a>
             </p>
           </div>
         </div>
