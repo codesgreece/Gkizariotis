@@ -6,5 +6,69 @@
     "description": "Εργασίες ανακαίνισης και αναβάθμισης κατοικίας.",
     "image": "/images/project-1.jpg",
     "createdAt": 1759387200000
+  },
+  {
+    "id": "project-2",
+    "title": "Σύγχρονο μπάνιο",
+    "category": "Ανακαινίσεις",
+    "description": "Ολοκληρωμένη ανακαίνιση μπάνιου με σύγχρονα τελειώματα.",
+    "image": "/images/project-2.jpg",
+    "createdAt": 1759387100000
+  },
+  {
+    "id": "project-3",
+    "title": "Ανακαινισμένα διαμερίσματα",
+    "category": "Διαμερίσματα",
+    "description": "Ανακαίνιση πολυκατοικίας με διαμερίσματα και επαγγελματικούς χώρους.",
+    "image": "/images/project-3.jpg",
+    "createdAt": 1759387000000
+  },
+  {
+    "id": "project-4",
+    "title": "Αναβάθμιση πρόσοψης",
+    "category": "Κατοικίες",
+    "description": "Εξωτερική αναβάθμιση κτιρίου με σύγχρονο φωτισμό και μπαλκόνι.",
+    "image": "/images/project-4.jpg",
+    "createdAt": 1759386900000
+  },
+  {
+    "id": "project-5",
+    "title": "Σχεδιασμός κουζίνας",
+    "category": "Ανακαινίσεις",
+    "description": "Μελέτη και σχεδιασμός σύγχρονης κουζίνας.",
+    "image": "/images/project-5.jpg",
+    "createdAt": 1759386800000
+  },
+  {
+    "id": "project-6",
+    "title": "Μονοκατοικία με περίφραξη",
+    "category": "Κατοικίες",
+    "description": "Ολοκλήρωση κατοικίας με σύγχρονη περίφραξη και εξωτερικές εργασίες.",
+    "image": "/images/project-6.jpg",
+    "createdAt": 1759386700000
+  },
+  {
+    "id": "project-7",
+    "title": "Κουζίνα σε εξέλιξη",
+    "category": "Ανακαινίσεις",
+    "description": "Τοποθέτηση κουζίνας και τελικές εργασίες εσωτερικού χώρου.",
+    "image": "/images/project-7.jpg",
+    "createdAt": 1759386600000
+  },
+  {
+    "id": "project-8",
+    "title": "Κουζίνα διαμερίσματος",
+    "category": "Διαμερίσματα",
+    "description": "Σύγχρονη κουζίνα με λειτουργική διάταξη σε διαμέρισμα.",
+    "image": "/images/project-8.jpg",
+    "createdAt": 1759386500000
+  },
+  {
+    "id": "project-9",
+    "title": "Premium κουζίνα",
+    "category": "Κατοικίες",
+    "description": "Κουζίνα υψηλών προδιαγραφών με νησίδα και πάγκους πέτρας.",
+    "image": "/images/project-9.jpg",
+    "createdAt": 1759386400000
   }
 ]
