@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" fill="none" role="img" aria-label="Gizariotis Construction">
+  <!-- Architectural mark -->
+  <path d="M8 84V22L44 4L80 22V84H64V48H24V84H8Z" fill="#1A1D21"/>
+  <path d="M24 84V52H64V84" stroke="#00A8E8" stroke-width="4"/>
+  <rect x="38" y="58" width="12" height="26" fill="#00A8E8"/>
+  <path d="M8 22L44 4L80 22" stroke="#00A8E8" stroke-width="3"/>
+  <!-- Wordmark as paths for reliable rendering -->
+  <g fill="#1A1D21">
+    <!-- GIZARIOTIS as simple geometric wordmark using textPath-free approach:
+         Use foreignObject-safe fallback via HTML instead; keep mark-only SVG for img use -->
+  </g>
+</svg>
