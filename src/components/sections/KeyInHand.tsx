@@ -10,7 +10,7 @@ const STEPS = [
 
 export function KeyInHand() {
   return (
-    <section className="section key-in-hand" aria-labelledby="kih-title">
+    <section id="kih" className="section key-in-hand" aria-labelledby="kih-title">
       <div className="container">
         <Reveal>
           <span className="section-label">Κλειδί στο χέρι</span>

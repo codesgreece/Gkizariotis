@@ -1,0 +1,12 @@
+# https://www.gizariotis.gr/robots.txt
+User-agent: *
+Allow: /
+
+# Private / internal admin panel
+Disallow: /admin
+Disallow: /admin/
+
+# API endpoints (not public content pages)
+Disallow: /api/
+
+Sitemap: https://www.gizariotis.gr/sitemap.xml

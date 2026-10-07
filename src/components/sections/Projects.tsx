@@ -100,8 +100,11 @@ export function Projects() {
               >
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={project.description || project.title}
+                  width={800}
+                  height={1000}
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="project-card-overlay">
                   <span className="project-category">{project.category}</span>

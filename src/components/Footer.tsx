@@ -1,9 +1,10 @@
 const FOOTER_LINKS = [
   { href: "#home", label: "Αρχική" },
-  { href: "#services", label: "Υπηρεσίες" },
-  { href: "#projects", label: "Έργα" },
-  { href: "#about", label: "Σχετικά" },
-  { href: "#areas", label: "Περιοχές" },
+  { href: "#services", label: "Υπηρεσίες ανακαίνισης" },
+  { href: "#kih", label: "Κλειδί στο χέρι" },
+  { href: "#projects", label: "Έργα μας" },
+  { href: "#about", label: "Σχετικά με εμάς" },
+  { href: "#areas", label: "Περιοχές εξυπηρέτησης" },
   { href: "#contact", label: "Επικοινωνία" },
 ];
 

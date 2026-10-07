@@ -108,7 +108,15 @@ export function Services() {
             Οι υπηρεσίες μας
           </h2>
           <p className="section-subtitle">
-            Όλα όσα χρειάζεστε για έναν ολοκληρωμένο χώρο.
+            Όλα όσα χρειάζεστε για έναν ολοκληρωμένο χώρο — από{" "}
+            <a href="#kih" className="text-link">
+              ανακαίνιση με το κλειδί στο χέρι
+            </a>{" "}
+            έως{" "}
+            <a href="#projects" className="text-link">
+              ολοκληρωμένα έργα
+            </a>
+            .
           </p>
         </Reveal>
 

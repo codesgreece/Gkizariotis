@@ -39,8 +39,18 @@ export function Contact() {
           </div>
 
           <div className="contact-panel-areas">
-            <h3>Περιοχές</h3>
-            <p>Κορινθία • Αττική • Αργολίδα • Αρκαδία • Μαγνησία</p>
+            <h3>Περιοχές εξυπηρέτησης</h3>
+            <p>
+              Εξυπηρετούμε{" "}
+              <a href="#areas" className="text-link">
+                Κορινθία, Αττική, Αργολίδα, Αρκαδία και Μαγνησία
+              </a>
+              . Δείτε επίσης τις{" "}
+              <a href="#services" className="text-link">
+                υπηρεσίες ανακαίνισης
+              </a>
+              .
+            </p>
           </div>
         </Reveal>
       </div>

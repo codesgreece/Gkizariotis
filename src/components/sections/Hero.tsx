@@ -20,13 +20,17 @@ export function Hero() {
   return (
     <section id="home" className="hero" aria-label="Αρχική">
       <div className="hero-media">
-        <img
-          src="/images/hero.jpg"
-          alt="Μοντέρνο ανακαινισμένο εσωτερικό κατοικίας"
-          width={1920}
-          height={1280}
-          fetchPriority="high"
-        />
+        <picture>
+          <source srcSet="/images/hero.webp" type="image/webp" />
+          <img
+            src="/images/hero.jpg"
+            alt="Μοντέρνο ανακαινισμένο εσωτερικό κατοικίας"
+            width={1600}
+            height={1066}
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
         <div className="hero-overlay" aria-hidden="true" />
       </div>
 

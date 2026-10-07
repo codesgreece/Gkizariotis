@@ -1,5 +1,9 @@
 import { Reveal } from "../../hooks/useReveal";
 
+function scrollToId(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 export function Intro() {
   return (
     <section id="about" className="section intro" aria-labelledby="intro-title">
@@ -19,7 +23,29 @@ export function Intro() {
               Από την πρώτη ιδέα και τον σχεδιασμό μέχρι την ολοκλήρωση του
               έργου, στόχος μας είναι να προσφέρουμε μια οργανωμένη και
               αξιόπιστη διαδικασία, με προσοχή στη λεπτομέρεια και έμφαση στο
-              τελικό αποτέλεσμα.
+              τελικό αποτέλεσμα. Δείτε τις{" "}
+              <a
+                href="#services"
+                className="text-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToId("services");
+                }}
+              >
+                υπηρεσίες ανακαίνισης
+              </a>{" "}
+              ή επικοινωνήστε για{" "}
+              <a
+                href="#contact"
+                className="text-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToId("contact");
+                }}
+              >
+                προσφορά έργου
+              </a>
+              .
             </p>
             <div className="intro-stat">
               <span className="intro-stat-number">06+</span>
@@ -28,13 +54,17 @@ export function Intro() {
           </Reveal>
 
           <Reveal className="intro-media" delay={2}>
-            <img
-              src="/images/about.jpg"
-              alt="Εργασίες ανακαίνισης και κατασκευής εσωτερικού χώρου"
-              width={1200}
-              height={816}
-              loading="lazy"
-            />
+            <picture>
+              <source srcSet="/images/about.webp" type="image/webp" />
+              <img
+                src="/images/about.jpg"
+                alt="Εργασίες ανακαίνισης και κατασκευής εσωτερικού χώρου"
+                width={1200}
+                height={816}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </Reveal>
         </div>
       </div>
