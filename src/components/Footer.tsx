@@ -42,12 +42,25 @@ export function Footer() {
 
         <div className="footer-bottom">
           <p>© 2026 GIZARIOTIS CONSTRUCTION. All rights reserved.</p>
-          <p className="footer-credit">
-            Σχεδιασμός &amp; ανάπτυξη από{" "}
-            <span className="footer-credit-name">Χαράλαμπο Χριστόπουλο</span>
-            {" · "}
-            <a href="tel:6936732844">693 673 2844</a>
-          </p>
+          <div className="footer-credits">
+            <p className="footer-credit">
+              Σχεδιασμός &amp; ανάπτυξη από{" "}
+              <span className="footer-credit-name">Χαράλαμπο Χριστόπουλο</span>
+              {" · "}
+              <a href="tel:6936732844">693 673 2844</a>
+            </p>
+            <p className="footer-made-by">
+              <span>Φτιάχτηκε από</span>
+              <a
+                href="https://www.nexusdevstudio.gr/"
+                className="footer-made-by-pill"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NexusDevStudio Greece
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
